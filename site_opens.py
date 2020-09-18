@@ -146,6 +146,7 @@ class Ui_MainWindow(object):
         self.browser = webdriver.Chrome(config.CHROMEDRIVER)
         self.browser.get(config.BASE_URL)
         try:
+            time.sleep(3)
             self.browser.find_element_by_id("parking").click()
             username = self.browser.find_element_by_id('email')
             username.send_keys(config.FUNCTIONAL_2_USERNAME)
